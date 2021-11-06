@@ -1,15 +1,12 @@
 package com.gaurav.restaurantsservice.entities;
 
-import com.gaurav.restaurantsservice.domains.Item;
 import com.gaurav.restaurantsservice.enums.DiningCategory;
-import com.gaurav.restaurantsservice.enums.FoodCategory;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Entity(name = "restaurant")
+@Entity(name = "restaurants")
 @Getter
 @Setter
 public class RestaurantEntity {
@@ -17,15 +14,17 @@ public class RestaurantEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
     private String address;
-//    private List<Item> itemsServed;
-    @Column(name = "opens_at")
+    @Column(name = "opens_at", nullable = false)
     private String opensAt;
-    @Column(name = "closes_at")
+    @Column(name = "closes_at",nullable = false)
     private String closesAt;
-    @Column(name = "dining_category")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "dining_category", nullable = false)
     private DiningCategory diningCategory;
+    @Column(name = "is_closed")
+    private boolean isClosed;
 }
