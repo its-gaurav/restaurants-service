@@ -49,6 +49,18 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(InvalidUserIdException.class)
+    public final ResponseEntity<Object> handleInvalidUserIdException(InvalidUserIdException ex, WebRequest request){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(BusinessLogicException.class)
+    public final ResponseEntity<Object> handleBusinessLogicException(BusinessLogicException ex, WebRequest request){
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(), request.getDescription(false), ex.getServiceExceptions());
+        return new ResponseEntity<>(exceptionResponse, ex.getHttpStatus());
+    }
+
 //    @ExceptionHandler(HttpMessageNotReadableException.class)
 //    public final ResponseEntity<Object> handleInvalidFormatException(HttpMessageNotReadableException ex, WebRequest request){
 //        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(), request.getDescription(false));

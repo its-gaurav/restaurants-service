@@ -8,14 +8,13 @@ import java.util.Date;
 import java.util.List;
 
 @Getter
-@Setter
 @AllArgsConstructor
 public class ExceptionResponse {
 
     private Date timestamp;
     private String message;
     private String detail;
-    private List<ServiceExceptions> serviceExceptions;
+    private List<ServiceException> serviceExceptions;
 
     public ExceptionResponse(Date timestamp, String message, String detail) {
         this.timestamp = timestamp;

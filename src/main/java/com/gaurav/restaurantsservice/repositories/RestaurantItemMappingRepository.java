@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 public interface RestaurantItemMappingRepository extends JpaRepository<RestaurantItemMappingEntity,Long> {
@@ -13,4 +14,6 @@ public interface RestaurantItemMappingRepository extends JpaRepository<Restauran
     Optional<RestaurantItemMappingEntity> findById(Long id);
 
     List<RestaurantItemMappingEntity> findByRestaurantId(Long restaurantId);
+
+    List<RestaurantItemMappingEntity> findByIdIn(Set<Long> orderedItemsMappingIds);
 }

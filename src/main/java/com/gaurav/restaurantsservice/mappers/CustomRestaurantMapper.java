@@ -2,14 +2,14 @@ package com.gaurav.restaurantsservice.mappers;
 
 import com.gaurav.restaurantsservice.domains.Item;
 import com.gaurav.restaurantsservice.domains.ItemServed;
+import com.gaurav.restaurantsservice.domains.OrderDetails;
 import com.gaurav.restaurantsservice.domains.Restaurant;
-import com.gaurav.restaurantsservice.entities.ItemEntity;
-import com.gaurav.restaurantsservice.entities.RestaurantEntity;
-import com.gaurav.restaurantsservice.entities.RestaurantFoodCategoryMappingEntity;
-import com.gaurav.restaurantsservice.entities.RestaurantItemMappingEntity;
+import com.gaurav.restaurantsservice.entities.*;
 import com.gaurav.restaurantsservice.enums.FoodCategory;
+import com.gaurav.restaurantsservice.enums.OrderStatus;
 import com.gaurav.restaurantsservice.exceptions.ItemNotFoundException;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,5 +92,18 @@ public class CustomRestaurantMapper {
 
     public static ItemEntity map(Item item) {
         return new ItemEntity(null, item.getName(), item.getFoodCategory());
+    }
+
+    public static OrderHistoryEntity map(OrderDetails orderDetails) {
+        OrderHistoryEntity orderEntity = new OrderHistoryEntity();
+        orderEntity.setRestaurantId(orderDetails.getRestaurantId());
+        orderEntity.setUserId(orderDetails.getUserId());
+        orderEntity.setInitialAmount(orderDetails.getInitialTotal());
+        orderEntity.setCouponCodeApplied(orderDetails.getCouponCode());
+        orderEntity.setDiscountAmount(orderDetails.getCouponDiscount());
+        orderEntity.setFinalAmount(orderDetails.getFinalTotal());
+        orderEntity.setStatus(OrderStatus.PENDING);
+        orderEntity.setOrderedOn(LocalDateTime.now());
+        return orderEntity;
     }
 }

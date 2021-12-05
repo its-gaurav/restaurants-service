@@ -1,16 +1,14 @@
 package com.gaurav.restaurantsservice.enums;
 
-public enum ServeType {
-
-    PIECE("piece"),
-    GRAM("gram"),
-    KILOGRAM("kilo-gram"),
-    MILILTR("milli-litre"),
-    LITRE("litre");
+public enum ExtraChargeType {
+    DELIVERY("Delivery"),
+    TAXES("Taxes"),
+    PACKING("Packing"),
+    EXTRA_SURGE("Extra Surge");
 
     private final String description;
 
-    ServeType(String description) {
+    ExtraChargeType(String description) {
         this.description = description;
     }
 

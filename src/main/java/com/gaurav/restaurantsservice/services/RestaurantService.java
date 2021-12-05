@@ -2,6 +2,7 @@ package com.gaurav.restaurantsservice.services;
 
 import com.gaurav.restaurantsservice.domains.Item;
 import com.gaurav.restaurantsservice.domains.ItemServed;
+import com.gaurav.restaurantsservice.domains.OrderDetails;
 import com.gaurav.restaurantsservice.domains.Restaurant;
 import com.gaurav.restaurantsservice.enums.FoodCategory;
 
@@ -27,4 +28,8 @@ public interface RestaurantService {
     void saveFoodCategories(Long restaurantId, Set<FoodCategory> foodCategories);
 
     Long saveItemToMaster(Item item, Long restaurantId);
+
+    OrderDetails checkoutOrderDetails(OrderDetails orderDetails);
+
+    void orderFood(OrderDetails orderDetails);
 }

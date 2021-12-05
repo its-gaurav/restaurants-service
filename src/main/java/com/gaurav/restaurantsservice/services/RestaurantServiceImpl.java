@@ -2,31 +2,27 @@ package com.gaurav.restaurantsservice.services;
 
 import com.gaurav.restaurantsservice.domains.Item;
 import com.gaurav.restaurantsservice.domains.ItemServed;
+import com.gaurav.restaurantsservice.domains.OrderDetails;
 import com.gaurav.restaurantsservice.domains.Restaurant;
-import com.gaurav.restaurantsservice.entities.ItemEntity;
-import com.gaurav.restaurantsservice.entities.RestaurantEntity;
-import com.gaurav.restaurantsservice.entities.RestaurantFoodCategoryMappingEntity;
-import com.gaurav.restaurantsservice.entities.RestaurantItemMappingEntity;
+import com.gaurav.restaurantsservice.entities.*;
 import com.gaurav.restaurantsservice.enums.FoodCategory;
 import com.gaurav.restaurantsservice.exceptions.ItemMappingNotFoundException;
 import com.gaurav.restaurantsservice.exceptions.ItemNotFoundException;
 import com.gaurav.restaurantsservice.exceptions.RestaurantNotFoundException;
 import com.gaurav.restaurantsservice.mappers.CustomRestaurantMapper;
-import com.gaurav.restaurantsservice.repositories.ItemRepository;
-import com.gaurav.restaurantsservice.repositories.RestaurantFoodCategoryMappingRepository;
-import com.gaurav.restaurantsservice.repositories.RestaurantItemMappingRepository;
-import com.gaurav.restaurantsservice.repositories.RestaurantRepository;
+import com.gaurav.restaurantsservice.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.gaurav.restaurantsservice.ExceptionConstants.*;
-@Component
+@Service
 public class RestaurantServiceImpl implements RestaurantService {
 
     @Autowired
@@ -43,6 +39,19 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Autowired
     private ItemService itemService;
+
+    @Autowired
+    private OrderHistoryDetailsRepository orderHistoryDetailsRepository;
+
+    @Autowired
+    private OrderHistoryRepository orderHistoryRepository;
+
+    @Autowired
+    private OrderHistoryExtraChargeDetailsRepository orderHistoryExtraChargeDetailsRepository;
+
+    private final String DELIVERY_CHARGE = "Delivery Charge";
+    private final String TAXES = "Taxes";
+    private final String DEMAND_SURGE = "Surge Charge";
 
     @Override
     public Long saveRestaurant(Restaurant restaurant) {
@@ -164,5 +173,74 @@ public class RestaurantServiceImpl implements RestaurantService {
         this.getRestaurantById(restaurantId, false);
         ItemEntity itemEntity = CustomRestaurantMapper.map(item);
         return itemRepository.save(itemEntity).getId();
+    }
+
+    @Override
+    public OrderDetails checkoutOrderDetails(OrderDetails orderDetails) {
+        Set<Long> orderedItemsMappingIds = orderDetails.getItemsOrdered().keySet();
+        BigDecimal deliveryCharge = BigDecimal.TEN;
+        BigDecimal taxes = BigDecimal.ZERO;
+        BigDecimal surgeCharge = BigDecimal.ONE;
+        if(!CollectionUtils.isEmpty(orderedItemsMappingIds)) {
+            List<RestaurantItemMappingEntity> itemMappingEntities = restaurantItemMappingRepository.findByIdIn(orderedItemsMappingIds);
+            List<ItemEntity> itemEntities = itemRepository.findByIdIn(itemMappingEntities.stream().
+                    map(RestaurantItemMappingEntity::getItemId).collect(Collectors.toList()));
+            BigDecimal cartValue = BigDecimal.ZERO;
+            for(Map.Entry<Long, BigInteger> entry: orderDetails.getItemsOrdered().entrySet()){
+                RestaurantItemMappingEntity itemMapped = itemMappingEntities.stream().
+                        filter(i-> i.getId().equals(entry.getKey())).findAny().
+                        orElseThrow(()-> new ItemMappingNotFoundException(ITEM_SERVED_NOT_FOUND));
+                ItemEntity itemEntity = itemEntities.stream().filter(i-> i.getId().equals(itemMapped.getItemId())).
+                        findAny().orElseThrow(()-> new ItemNotFoundException(ITEM_NOT_FOUND));
+                BigInteger quantity = entry.getValue();
+                String quantityDetails = quantity + " x "+ itemMapped.getServeQuantity()+ itemMapped.getServeType().getDescription();
+                String itemDetails = itemEntity.getName() + " " + quantityDetails;
+                BigDecimal itemValue = itemMapped.getPrice().multiply(new BigDecimal(quantity));
+
+                orderDetails.getItemsOrderedDetails().put(itemDetails, itemValue);
+
+                cartValue = cartValue.add(itemValue);
+            }
+            cartValue = cartValue.add(deliveryCharge).add(taxes).add(surgeCharge);
+            orderDetails.getExtraChargeDetails().put(DELIVERY_CHARGE, deliveryCharge);
+            orderDetails.getExtraChargeDetails().put(TAXES, taxes);
+            orderDetails.getExtraChargeDetails().put(DEMAND_SURGE, surgeCharge);
+
+            orderDetails.setInitialTotal(cartValue);
+            orderDetails.setFinalTotal(cartValue);
+
+
+        }
+
+        return orderDetails;
+    }
+
+    @Override
+    public void orderFood(OrderDetails orderDetails) {
+//        OrderHistoryEntity orderHistoryEntity = CustomRestaurantMapper.map(orderDetails);
+//        Optional<OrderHistoryEntity> lastOrder = orderHistoryRepository.findTopOrderByIdDesc();
+//        String orderNumber;
+//        if(lastOrder.isPresent()){
+//            String prefix = lastOrder.get().getOrderNumber().substring(0,lastOrder.get().getOrderNumber().length()-2);
+//            long n = Long.parseLong(lastOrder.get().getOrderNumber().substring(lastOrder.get().getOrderNumber().length()-1));
+//            n = n+1;
+//            orderNumber = prefix.concat(String.valueOf(n));
+//        }else{
+//            orderNumber = "foodies1";
+//        }
+//        orderHistoryEntity.setOrderNumber(orderNumber);
+//        orderHistoryRepository.save(orderHistoryEntity);
+//
+//        Map<Long, BigInteger> itemsOrdered = orderDetails.getItemsOrdered();
+//        List<OrderHistoryDetailsEntity> detailsEntities = new ArrayList<>();
+//        for(Map.Entry<Long, BigInteger> entry: itemsOrdered.entrySet()){
+//            OrderHistoryDetailsEntity historyDetail = new OrderHistoryDetailsEntity();
+//            historyDetail.setItemServedId(entry.getKey());
+//            historyDetail.setQuantity(entry.getValue());
+//            historyDetail.setOrderDescription();
+//            historyDetail.setOrderHistoryId();
+//            historyDetail.setAmount();;
+//
+//        }
     }
 }

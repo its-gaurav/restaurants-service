@@ -2,10 +2,7 @@ package com.gaurav.restaurantsservice.controllers;
 
 import com.gaurav.restaurantsservice.Configuration;
 import com.gaurav.restaurantsservice.checkers.RestaurantChecker;
-import com.gaurav.restaurantsservice.domains.Item;
-import com.gaurav.restaurantsservice.domains.ItemServed;
-import com.gaurav.restaurantsservice.domains.Limits;
-import com.gaurav.restaurantsservice.domains.Restaurant;
+import com.gaurav.restaurantsservice.domains.*;
 import com.gaurav.restaurantsservice.enums.FoodCategory;
 import com.gaurav.restaurantsservice.services.RestaurantService;
 import lombok.extern.slf4j.Slf4j;
@@ -117,5 +114,22 @@ public class RestaurantRestController {
                 .fromCurrentRequest().path("/{id}")
                 .buildAndExpand(savedItemServedId).toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @PostMapping("/{restaurantId}/checkout-details")
+    public OrderDetails checkoutDetails(@RequestBody OrderDetails orderDetails, @PathVariable("restaurantId") Long restaurantId){
+        log.info("----- Checking Out Details ------");
+        restaurantChecker.checkValidOrderDetails(orderDetails, restaurantId);
+        return restaurantsService.checkoutOrderDetails(orderDetails);
+    }
+
+    @PostMapping("/{restaurantId}/order")
+    public OrderDetails orderFood(@RequestBody OrderDetails orderDetails, @PathVariable("restaurantId") Long restaurantId){
+        log.info("----- Ordering Food ------");
+        restaurantChecker.checkValidOrderDetails(orderDetails, restaurantId);
+        orderDetails = restaurantsService.checkoutOrderDetails(orderDetails);
+        restaurantsService.orderFood(orderDetails);
+
+        return orderDetails;
     }
 }
