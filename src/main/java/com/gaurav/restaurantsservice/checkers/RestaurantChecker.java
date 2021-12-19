@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 import static com.gaurav.restaurantsservice.ExceptionConstants.*;
 
-@Component
+//@Component // this is being loaded into spring ioc container through @Bean annotation
 public class RestaurantChecker {
 
     @Autowired

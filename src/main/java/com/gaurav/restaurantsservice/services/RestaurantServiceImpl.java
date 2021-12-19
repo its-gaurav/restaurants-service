@@ -12,7 +12,6 @@ import com.gaurav.restaurantsservice.exceptions.RestaurantNotFoundException;
 import com.gaurav.restaurantsservice.mappers.CustomRestaurantMapper;
 import com.gaurav.restaurantsservice.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 

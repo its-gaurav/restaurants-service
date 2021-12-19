@@ -1,7 +1,6 @@
 package com.gaurav.restaurantsservice.exceptions;
 
-import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import org.springframework.beans.ConversionNotSupportedException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,17 +16,24 @@ import java.util.Date;
 
 @RestController
 @ControllerAdvice
+@Slf4j
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+
+    private String errorMessage;
 
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request){
-        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),"generic exception", request.getDescription(false));
+        errorMessage = "generic exception";
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),errorMessage, request.getDescription(false));
+        logger.error(errorMessage,ex);
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(RestaurantNotFoundException.class)
     public final ResponseEntity<Object> handleRestaurantNotFoundException(RestaurantNotFoundException ex, WebRequest request){
-        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(), request.getDescription(false));
+        errorMessage = ex.getMessage();
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),errorMessage, request.getDescription(false));
+        logger.error(errorMessage,ex);
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
