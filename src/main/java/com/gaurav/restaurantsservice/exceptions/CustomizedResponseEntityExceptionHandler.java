@@ -31,16 +31,19 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
     @ExceptionHandler(RestaurantNotFoundException.class)
     public final ResponseEntity<Object> handleRestaurantNotFoundException(RestaurantNotFoundException ex, WebRequest request){
+        return handleNotFoundException(ex, request);
+    }
+
+    private ResponseEntity<Object> handleNotFoundException(RuntimeException ex, WebRequest request) {
         errorMessage = ex.getMessage();
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),errorMessage, request.getDescription(false));
-        logger.error(errorMessage,ex);
+        logger.error(errorMessage, ex);
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ItemNotFoundException.class)
     public final ResponseEntity<Object> handleItemNotFoundException(ItemNotFoundException ex, WebRequest request){
-        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(),ex.getMessage(), request.getDescription(false));
-        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+        return handleNotFoundException(ex, request);
     }
 
     @ExceptionHandler(InvalidItemMappingIdException.class)

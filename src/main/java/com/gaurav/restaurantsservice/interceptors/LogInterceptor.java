@@ -15,28 +15,28 @@ public class LogInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("------------ LogInterceptor preHandle (Start) -------------");
-        log.info(request.getRemoteAddr()+" accessed resource "+request.getRequestURI()+" @ "+getCurrentTime());
+        log.info(request.getRemoteAddr()+" accessed resource "+request.getRequestURI()+" ("+request.getMethod()+")"+" @ "+getCurrentTime());
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime",startTime);
-        log.info("------------ LogInterceptor preHandle (End) -------------");
+        response.setDateHeader("endTime",startTime);
+
         /*
+        *
         * Suppose for all requests having ips ending with 192,
         * we want to redirect request to "auth-failed"
+        *
         * */
         if(request.getRemoteAddr().startsWith("192")){
             response.sendRedirect("/auth-failed");
             // returning false ensures that request is not further required to be intercepted. Response is directly send to user hereafter.
             return false;
         }
-        response.setDateHeader("startTime",startTime);
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         long endTime = System.currentTimeMillis();
-        response.setDateHeader("endTime",endTime);
         log.info("------------ LogInterceptor postHandle (Start) -------------");
 //        HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
     }
