@@ -1,0 +1,213 @@
+2021-12-27 23:08:46.176  INFO 19004 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : Starting RestaurantsServiceApplicationTests using Java 1.8.0_301 on DESKTOP-D53HI8O with PID 19004 (started by Gaurav in C:\Users\Gaurav\Desktop\order-food\restaurants-service)
+2021-12-27 23:08:46.178 DEBUG 19004 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-12-27 23:08:46.179  INFO 19004 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : The following profiles are active: dev
+2021-12-27 23:08:46.221  INFO 19004 --- [Test worker] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://localhost:8888
+2021-12-27 23:08:46.221  INFO 19004 --- [Test worker] o.s.b.context.config.ConfigDataLoader    : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2021-12-27 23:08:46.222  WARN 19004 --- [Test worker] o.s.b.context.config.ConfigDataLoader    : Could not locate PropertySource ([ConfigServerConfigDataResource@4d666b41 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:8888/restaurants-service/dev": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-12-27 23:08:47.378  INFO 19004 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 23:08:47.518  INFO 19004 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 7 JPA repository interfaces.
+2021-12-27 23:08:47.850  INFO 19004 --- [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fb86ce15-94b6-3ab9-8277-a92d5b101f73
+2021-12-27 23:08:48.425  INFO 19004 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 23:08:48.493  INFO 19004 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-27 23:08:48.721  INFO 19004 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 23:08:48.852  INFO 19004 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-27 23:08:49.340  INFO 19004 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-27 23:08:49.376  INFO 19004 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-27 23:08:50.270  INFO 19004 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 23:08:50.286  INFO 19004 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:08:51.335  WARN 19004 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 23:08:53.588  INFO 19004 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2021-12-27 23:08:53.672  INFO 19004 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : Started RestaurantsServiceApplicationTests in 10.422 seconds (JVM running for 11.764)
+2021-12-27 23:08:53.875  INFO 19004 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:08:53.878  INFO 19004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-27 23:08:53.891  INFO 19004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-27 23:10:18.880  INFO 18572 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : Starting RestaurantsServiceApplicationTests using Java 1.8.0_301 on DESKTOP-D53HI8O with PID 18572 (started by Gaurav in C:\Users\Gaurav\Desktop\order-food\restaurants-service)
+2021-12-27 23:10:18.881 DEBUG 18572 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-12-27 23:10:18.882  INFO 18572 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : The following profiles are active: dev
+2021-12-27 23:10:18.920  INFO 18572 --- [Test worker] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://localhost:8888
+2021-12-27 23:10:18.920  INFO 18572 --- [Test worker] o.s.b.context.config.ConfigDataLoader    : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2021-12-27 23:10:18.920  WARN 18572 --- [Test worker] o.s.b.context.config.ConfigDataLoader    : Could not locate PropertySource ([ConfigServerConfigDataResource@4d666b41 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:8888/restaurants-service/dev": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-12-27 23:10:19.886  INFO 18572 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 23:10:19.987  INFO 18572 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 7 JPA repository interfaces.
+2021-12-27 23:10:20.187  INFO 18572 --- [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fb86ce15-94b6-3ab9-8277-a92d5b101f73
+2021-12-27 23:10:20.629  INFO 18572 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 23:10:20.693  INFO 18572 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-27 23:10:20.826  INFO 18572 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 23:10:20.928  INFO 18572 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-27 23:10:21.379  INFO 18572 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-27 23:10:21.418  INFO 18572 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-27 23:10:22.304  INFO 18572 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 23:10:22.315  INFO 18572 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:10:23.236  WARN 18572 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 23:10:24.591  INFO 18572 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2021-12-27 23:10:24.657  INFO 18572 --- [Test worker] c.g.r.RestaurantsServiceApplicationTests : Started RestaurantsServiceApplicationTests in 8.559 seconds (JVM running for 9.855)
+2021-12-27 23:10:24.838  INFO 18572 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:10:24.841  INFO 18572 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-27 23:10:24.852  INFO 18572 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-27 23:10:32.025  INFO 16368 --- [main] c.g.r.RestaurantsServiceApplication      : Starting RestaurantsServiceApplication using Java 1.8.0_301 on DESKTOP-D53HI8O with PID 16368 (C:\Users\Gaurav\Desktop\order-food\restaurants-service\build\libs\restaurants-service-0.0.1-SNAPSHOT.jar started by Gaurav in C:\Users\Gaurav\Desktop\order-food\restaurants-service)
+2021-12-27 23:10:32.028 DEBUG 16368 --- [main] c.g.r.RestaurantsServiceApplication      : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-12-27 23:10:32.029  INFO 16368 --- [main] c.g.r.RestaurantsServiceApplication      : The following profiles are active: dev
+2021-12-27 23:10:32.107  INFO 16368 --- [main] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://localhost:8888
+2021-12-27 23:10:32.108  INFO 16368 --- [main] o.s.b.context.config.ConfigDataLoader    : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2021-12-27 23:10:32.108  WARN 16368 --- [main] o.s.b.context.config.ConfigDataLoader    : Could not locate PropertySource ([ConfigServerConfigDataResource@dc24521 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:8888/restaurants-service/dev": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-12-27 23:10:33.643  INFO 16368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 23:10:33.847  INFO 16368 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 7 JPA repository interfaces.
+2021-12-27 23:10:34.093  INFO 16368 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f883dd15-3811-3799-a118-a2306119f14a
+2021-12-27 23:10:34.868  INFO 16368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-12-27 23:10:34.883  INFO 16368 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-27 23:10:34.884  INFO 16368 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-27 23:10:34.987  INFO 16368 --- [main] o.a.c.c.C.[.[localhost].[/restaurants]   : Initializing Spring embedded WebApplicationContext
+2021-12-27 23:10:34.988  INFO 16368 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2879 ms
+2021-12-27 23:10:35.345  INFO 16368 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 23:10:35.447  INFO 16368 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-27 23:10:35.647  INFO 16368 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 23:10:35.752  INFO 16368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-27 23:10:36.204  INFO 16368 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-27 23:10:36.236  INFO 16368 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-27 23:10:37.194  INFO 16368 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 23:10:37.204  INFO 16368 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:10:37.861  WARN 16368 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 23:10:38.657  INFO 16368 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2021-12-27 23:10:38.713  INFO 16368 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path '/restaurants'
+2021-12-27 23:10:38.853  INFO 16368 --- [main] c.g.r.RestaurantsServiceApplication      : Started RestaurantsServiceApplication in 10.145 seconds (JVM running for 10.778)
+2021-12-27 23:10:42.814  INFO 16368 --- [http-nio-8085-exec-2] o.a.c.c.C.[.[localhost].[/restaurants]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-27 23:10:42.814  INFO 16368 --- [http-nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-27 23:10:42.815  INFO 16368 --- [http-nio-8085-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-27 23:10:42.849  INFO 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : 0:0:0:0:0:0:0:1 accessed resource /restaurants/1 (GET) @ 2021-12-27T23:10:42.849
+2021-12-27 23:10:42.849 TRACE 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : log.trace
+2021-12-27 23:10:42.849  WARN 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : log.warn
+2021-12-27 23:10:42.850 ERROR 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : log.error
+2021-12-27 23:10:42.850 DEBUG 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : log.debug
+2021-12-27 23:10:43.260  INFO 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : ------------ LogInterceptor postHandle (Start) -------------
+2021-12-27 23:10:43.262  INFO 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : ------------------ LogInterceptor after view is rendered (Start) ---------------
+2021-12-27 23:10:43.262  INFO 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : -------------- Total time taken to process request (in milliseconds) 412 ms
+2021-12-27 23:10:43.262  INFO 16368 --- [http-nio-8085-exec-2] c.g.r.interceptors.LogInterceptor        : ------------------ LogInterceptor after view is rendered (End) ---------------
+2021-12-27 23:12:03.101  INFO 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : 0:0:0:0:0:0:0:1 accessed resource /restaurants/1000 (GET) @ 2021-12-27T23:12:03.101
+2021-12-27 23:12:03.101 TRACE 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : log.trace
+2021-12-27 23:12:03.101  WARN 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : log.warn
+2021-12-27 23:12:03.101 ERROR 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : log.error
+2021-12-27 23:12:03.101 DEBUG 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : log.debug
+2021-12-27 23:12:03.125 ERROR 16368 --- [http-nio-8085-exec-5] CustomizedResponseEntityExceptionHandler : Invalid Restaurant Id
+
+com.gaurav.restaurantsservice.exceptions.RestaurantNotFoundException: Invalid Restaurant Id
+	at com.gaurav.restaurantsservice.services.RestaurantServiceImpl.lambda$getRestaurantById$1(RestaurantServiceImpl.java:73) ~[classes!/:na]
+	at java.util.Optional.orElseThrow(Optional.java:290) ~[na:1.8.0_301]
+	at com.gaurav.restaurantsservice.services.RestaurantServiceImpl.getRestaurantById(RestaurantServiceImpl.java:73) ~[classes!/:na]
+	at com.gaurav.restaurantsservice.controllers.RestaurantRestController.getRestaurant(RestaurantRestController.java:49) ~[classes!/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_301]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_301]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_301]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_301]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.10.jar!/:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.10.jar!/:5.3.10]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) [spring-boot-actuator-2.5.5.jar!/:2.5.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.10.jar!/:5.3.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.53.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.53.jar!/:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_301]
+
+2021-12-27 23:12:03.134  INFO 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : ------------------ LogInterceptor after view is rendered (Start) ---------------
+2021-12-27 23:12:03.134  INFO 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : -------------- Total time taken to process request (in milliseconds) 32 ms
+2021-12-27 23:12:03.134  INFO 16368 --- [http-nio-8085-exec-5] c.g.r.interceptors.LogInterceptor        : ------------------ LogInterceptor after view is rendered (End) ---------------
+2021-12-27 23:26:04.456  WARN 16368 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m58s36ms356µs700ns).
+2021-12-27 23:26:14.257  INFO 16368 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:26:14.260  INFO 16368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-27 23:26:14.281  INFO 16368 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-27 23:26:20.265  INFO 22336 --- [main] c.g.r.RestaurantsServiceApplication      : Starting RestaurantsServiceApplication using Java 1.8.0_301 on DESKTOP-D53HI8O with PID 22336 (C:\Users\Gaurav\Desktop\order-food\restaurants-service\build\libs\restaurants-service-0.0.1-SNAPSHOT.jar started by Gaurav in C:\Users\Gaurav\Desktop\order-food\restaurants-service)
+2021-12-27 23:26:20.268 DEBUG 22336 --- [main] c.g.r.RestaurantsServiceApplication      : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-12-27 23:26:20.268  INFO 22336 --- [main] c.g.r.RestaurantsServiceApplication      : The following profiles are active: dev
+2021-12-27 23:26:20.332  INFO 22336 --- [main] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://localhost:8888
+2021-12-27 23:26:20.332  INFO 22336 --- [main] o.s.b.context.config.ConfigDataLoader    : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2021-12-27 23:26:20.333  WARN 22336 --- [main] o.s.b.context.config.ConfigDataLoader    : Could not locate PropertySource ([ConfigServerConfigDataResource@dc24521 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:8888/restaurants-service/dev": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-12-27 23:26:21.765  INFO 22336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 23:26:21.913  INFO 22336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 7 JPA repository interfaces.
+2021-12-27 23:26:22.129  INFO 22336 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f883dd15-3811-3799-a118-a2306119f14a
+2021-12-27 23:26:22.831  INFO 22336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-12-27 23:26:22.843  INFO 22336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-27 23:26:22.844  INFO 22336 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-27 23:26:22.924  INFO 22336 --- [main] o.a.c.c.C.[.[localhost].[/restaurants]   : Initializing Spring embedded WebApplicationContext
+2021-12-27 23:26:22.925  INFO 22336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2587 ms
+2021-12-27 23:26:23.296  INFO 22336 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 23:26:23.387  INFO 22336 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-27 23:26:23.605  INFO 22336 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 23:26:23.731  INFO 22336 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-27 23:26:24.182  INFO 22336 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-27 23:26:24.224  INFO 22336 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-27 23:26:25.192  INFO 22336 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 23:26:25.204  INFO 22336 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:26:25.856  WARN 22336 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 23:26:26.572  INFO 22336 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2021-12-27 23:26:26.635  INFO 22336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path '/restaurants'
+2021-12-27 23:26:26.749  INFO 22336 --- [main] c.g.r.RestaurantsServiceApplication      : Started RestaurantsServiceApplication in 9.6 seconds (JVM running for 10.196)
+2021-12-27 23:27:10.887  INFO 22336 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:27:10.890  INFO 22336 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-27 23:27:10.909  INFO 22336 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-27 23:27:16.382  INFO 22532 --- [main] c.g.r.RestaurantsServiceApplication      : Starting RestaurantsServiceApplication using Java 1.8.0_301 on DESKTOP-D53HI8O with PID 22532 (C:\Users\Gaurav\Desktop\order-food\restaurants-service\build\libs\restaurants-service-0.0.1-SNAPSHOT.jar started by Gaurav in C:\Users\Gaurav\Desktop\order-food\restaurants-service)
+2021-12-27 23:27:16.385 DEBUG 22532 --- [main] c.g.r.RestaurantsServiceApplication      : Running with Spring Boot v2.5.5, Spring v5.3.10
+2021-12-27 23:27:16.385  INFO 22532 --- [main] c.g.r.RestaurantsServiceApplication      : The following profiles are active: dev
+2021-12-27 23:27:16.453  INFO 22532 --- [main] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://localhost:8888
+2021-12-27 23:27:16.453  INFO 22532 --- [main] o.s.b.context.config.ConfigDataLoader    : Connect Timeout Exception on Url - http://localhost:8888. Will be trying the next url if available
+2021-12-27 23:27:16.453  WARN 22532 --- [main] o.s.b.context.config.ConfigDataLoader    : Could not locate PropertySource ([ConfigServerConfigDataResource@dc24521 uris = array<String>['http://localhost:8888'], optional = true, profiles = list['dev']]): I/O error on GET request for "http://localhost:8888/restaurants-service/dev": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect
+2021-12-27 23:27:17.784  INFO 22532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-27 23:27:17.926  INFO 22532 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 130 ms. Found 7 JPA repository interfaces.
+2021-12-27 23:27:18.149  INFO 22532 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=f883dd15-3811-3799-a118-a2306119f14a
+2021-12-27 23:27:18.861  INFO 22532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2021-12-27 23:27:18.874  INFO 22532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-27 23:27:18.875  INFO 22532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-12-27 23:27:18.957  INFO 22532 --- [main] o.a.c.c.C.[.[localhost].[/restaurants]   : Initializing Spring embedded WebApplicationContext
+2021-12-27 23:27:18.957  INFO 22532 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2502 ms
+2021-12-27 23:27:19.285  INFO 22532 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-27 23:27:19.369  INFO 22532 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-27 23:27:19.543  INFO 22532 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-27 23:27:19.644  INFO 22532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-27 23:27:20.071  INFO 22532 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-27 23:27:20.101  INFO 22532 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-12-27 23:27:21.040  INFO 22532 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-27 23:27:21.049  INFO 22532 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-27 23:27:21.676  WARN 22532 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-27 23:27:22.486  INFO 22532 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2021-12-27 23:27:22.538  INFO 22532 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path '/restaurants'
+2021-12-27 23:27:22.654  INFO 22532 --- [main] c.g.r.RestaurantsServiceApplication      : Started RestaurantsServiceApplication in 9.397 seconds (JVM running for 9.961)

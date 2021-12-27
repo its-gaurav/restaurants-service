@@ -1,6 +1,8 @@
 package com.gaurav.restaurantsservice.interceptors;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.CacheControl;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -8,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
+import java.util.concurrent.TimeUnit;
 
 @Component
 @Slf4j
@@ -16,9 +19,20 @@ public class LogInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.info(request.getRemoteAddr()+" accessed resource "+request.getRequestURI()+" ("+request.getMethod()+")"+" @ "+getCurrentTime());
+        log.trace("log.trace");
+        log.warn("log.warn");
+        log.error("log.error");
+        log.debug("log.debug");
+
         long startTime = System.currentTimeMillis();
         request.setAttribute("startTime",startTime);
         response.setDateHeader("endTime",startTime);
+        // cache-control used for browser-caching
+        response.setHeader(HttpHeaders.CACHE_CONTROL,
+                CacheControl.noCache()
+                        .cachePublic()
+                        .mustRevalidate().sMaxAge(60L, TimeUnit.MINUTES)
+                        .getHeaderValue());
 
         /*
         *
